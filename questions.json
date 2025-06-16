@@ -1,52 +1,52 @@
 [
   {
-    "question": "What is the capital of France?",
-    "options": ["Berlin", "London", "Paris", "Rome"],
-    "answer": "Paris"
+    "question": "Which keyword is used to define a function in Go?",
+    "options": ["func", "def", "function", "method"],
+    "answer": "func"
   },
   {
-    "question": "What is 2 + 2?",
-    "options": ["3", "4", "5", "6"],
-    "answer": "4"
+    "question": "What is the zero value of an int in Go?",
+    "options": ["null", "0", "undefined", "nil"],
+    "answer": "0"
   },
   {
-    "question": "Which planet is known as the Red Planet?",
-    "options": ["Earth", "Mars", "Jupiter", "Venus"],
-    "answer": "Mars"
+    "question": "Which package is used to format output in Go?",
+    "options": ["io", "fmt", "log", "output"],
+    "answer": "fmt"
   },
   {
-    "question": "Who wrote 'Romeo and Juliet'?",
-    "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
-    "answer": "William Shakespeare"
+    "question": "How do you declare a variable in Go?",
+    "options": ["let x = 5", "var x = 5", "x := 5", "Both B and C"],
+    "answer": "Both B and C"
   },
   {
-    "question": "What is the largest ocean on Earth?",
-    "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
-    "answer": "Pacific Ocean"
+    "question": "What does 'go' keyword do in Go?",
+    "options": ["Define a package", "Start a goroutine", "Declare a variable", "Import a module"],
+    "answer": "Start a goroutine"
   },
   {
-    "question": "Which language is primarily spoken in Brazil?",
-    "options": ["Spanish", "Portuguese", "French", "English"],
-    "answer": "Portuguese"
+    "question": "Which of the following is a correct Go data type?",
+    "options": ["integer", "number", "int", "num"],
+    "answer": "int"
   },
   {
-    "question": "What gas do plants absorb from the atmosphere?",
-    "options": ["Oxygen", "Hydrogen", "Carbon Dioxide", "Nitrogen"],
-    "answer": "Carbon Dioxide"
+    "question": "What is the default value of a string in Go?",
+    "options": ["nil", "empty string", "null", "0"],
+    "answer": "empty string"
   },
   {
-    "question": "Which is the smallest prime number?",
-    "options": ["0", "1", "2", "3"],
-    "answer": "2"
+    "question": "Which keyword is used to import packages in Go?",
+    "options": ["include", "require", "import", "use"],
+    "answer": "import"
   },
   {
-    "question": "Who was the first person to walk on the Moon?",
-    "options": ["Yuri Gagarin", "Buzz Aldrin", "Neil Armstrong", "John Glenn"],
-    "answer": "Neil Armstrong"
+    "question": "What is a goroutine in Go?",
+    "options": ["A package", "A compiler", "A lightweight thread", "An error type"],
+    "answer": "A lightweight thread"
   },
   {
-    "question": "Which country is famous for the Great Wall?",
-    "options": ["Japan", "India", "China", "South Korea"],
-    "answer": "China"
+    "question": "How do you write a comment in Go?",
+    "options": ["# comment", "// comment", "<!-- comment -->", "/* comment"],
+    "answer": "// comment"
   }
 ]
