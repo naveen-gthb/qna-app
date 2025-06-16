@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QnA App</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+    .option { margin: 8px 0; display: block; }
+    #nextBtn { padding: 10px 20px; margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <h1>QnA Quiz</h1>
+  <div id="quiz-container"></div>
+  <button id="nextBtn">Next</button>
+  <div id="result"></div>
+
+  <script>
+    let currentIndex = 0;
+    let score = 0;
+
+    const questions = [
+      {
+        question: "What is the capital of France?",
+        options: ["Berlin", "London", "Paris", "Rome"],
+        answer: "Paris"
+      },
+      {
+        question: "What is 2 + 2?",
+        options: ["3", "4", "5", "6"],
+        answer: "4"
+      }
+    ];
+
+    window.onload = function () {
+      loadQuestion();
+    };
+
+    function loadQuestion() {
+      const quiz = document.getElementById('quiz-container');
+      const nextBtn = document.getElementById('nextBtn');
+      nextBtn.disabled = true;
+
+      const q = questions[currentIndex];
+      quiz.innerHTML = `<h3>${q.question}</h3>` + q.options.map(opt =>
+        `<label class="option">
+          <input type="radio" name="option" value="${opt}"> ${opt}
+        </label>`
+      ).join('');
+
+      document.querySelectorAll('input[name="option"]').forEach(input => {
+        input.addEventListener('change', () => {
+          nextBtn.disabled = false;
+        });
+      });
+
+      nextBtn.onclick = () => {
+        const selected = document.querySelector('input[name="option"]:checked');
+        if (!selected) return;
+        if (selected.value === q.answer) score++;
+        currentIndex++;
+        if (currentIndex < questions.length) {
+          loadQuestion();
+        } else {
+          showResult();
+        }
+      };
+    }
+
+    function showResult() {
+      const result = {
+        score,
+        total: questions.length,
+        timestamp: new Date().toISOString()
+      };
+
+      let history = JSON.parse(localStorage.getItem('qnaHistory') || '[]');
+      history.push(result);
+      localStorage.setItem('qnaHistory', JSON.stringify(history));
+
+      document.getElementById('quiz-container').innerHTML = '';
+      document.getElementById('nextBtn').style.display = 'none';
+      document.getElementById('result').innerHTML = `
+        <h3>Quiz Complete!</h3>
+        <p>You scored ${score} out of ${questions.length}</p>
+        <h4>History:</h4>
+        <pre>${JSON.stringify(history, null, 2)}</pre>
+      `;
+    }
+  </script>
+</body>
+</html>
